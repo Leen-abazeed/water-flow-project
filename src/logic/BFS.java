@@ -55,7 +55,7 @@ public class BFS {
                         }
                     } else {  // neighbor is normal
                         // flow if height is same or higher
-                        if (neighHeight > curHeight) {
+                        if (neighHeight >= curHeight) {
                             queue.add(new int[]{nr, nc});
                         }
                     }
