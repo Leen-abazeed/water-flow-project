@@ -33,7 +33,7 @@ public class BFS {
                 int neighHeight = cells[nr][nc][0];
 
                 if (curType == -2) {
-                    // River cell: flow only to river  neighbors with same height
+                    // If current is river: flow only to river neighbors of the same height
                     if (neighType == -2 ) {
                         if (neighHeight == curHeight) {
                             queue.add(new int[]{nr, nc});
@@ -47,14 +47,14 @@ public class BFS {
                 } else {
 
                     if (neighType == -2) {  // neighbor is river
-                        // flow only if height is exactly equal
+                        // Flow from normal cell to river only if heights are equal
                         if (neighHeight == curHeight) {
                             queue.add(new int[]{nr, nc});
                         } else {
                             continue;
                         }
                     } else {  // neighbor is normal
-                        // flow if height is same or higher
+                        // flow if neighbor  is strictly higher
                         if (neighHeight > curHeight) {
                             queue.add(new int[]{nr, nc});
                         }
