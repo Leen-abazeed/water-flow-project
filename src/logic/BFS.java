@@ -33,8 +33,8 @@ public class BFS {
                 int neighHeight = cells[nr][nc][0];
 
                 if (curType == -2) {
-                    // River cell: flow only to river or normal neighbors with same height
-                    if ((neighType == -2 || neighType == 0)) {
+                    // River cell: flow only to river  neighbors with same height
+                    if (neighType == -2 ) {
                         if (neighHeight == curHeight) {
                             queue.add(new int[]{nr, nc});
                         } else {
